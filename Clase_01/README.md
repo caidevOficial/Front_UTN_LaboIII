@@ -16,44 +16,13 @@
 
 ---
 
-<details>
-  <summary>:zap: GitHub Stats</summary>
-    <img align="center" src="https://github-readme-stats-caidevposeidon.vercel.app/api?username=caidevOficial&show_icons=true&theme=chartreuse-dark&count_private=true&show_owner=true&include_all_commits=true" /><br><br>
-</details>
-
-<details>
-    <summary>:zap: Most Used Languages</summary>
-    <img align="center" src="https://github-readme-stats-caidevposeidon.vercel.app/api/top-langs/?username=caidevOficial&layout=compact&theme=chartreuse-dark&langs_count=10&exclude_repo=Java_Lineage2_aCis_From_345&hide=html,css"/><br>
-</details>
-
----
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>New Skill</title>
-  </head>
-  <body>
-    <table class="myTasks">
-      <theader>
-        <th>My List</th>
-      </theader>
-      <tbody>
-        <tr>
-          <td>
-            <ol type"I">
-              <li>Learn</li>
-              <li>Improve</li>
-              <li>Pass</li>
-            </ol>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </body>
-</html>
-```
+<table>
+  <tr>
+    <td>
+      <img align="center" alt="tables" src="media/Tables.png"/>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -62,7 +31,7 @@
 <table class="skills">
   <tr>
     <td>
-    <a href="https://www.w3.org/html/"><img align="center" alt="html" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg?raw=true" width="50px" height="50px" />
+      <a href="https://www.w3.org/html/"><img align="center" alt="html" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg?raw=true" width="50px" height="50px" />
     </td>
     <td>
     <center><h3>Html</h3></center>
@@ -71,25 +40,16 @@
 
   <tr>
     <td>
-    <a href="https://www.w3schools.com/css/"><img align="center" alt="css" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg?raw=true" width="50px" height="50px" />
+      <a href="https://www.w3schools.com/css/"><img align="center" alt="css" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg?raw=true" width="50px" height="50px" />
     </td>
     <td>
     <center><h3>Css</h3></center>
     </td>
   </tr>
-  
-  <tr>
-    <td>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/"><img align="center" alt="js" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg?raw=true" width="50px" height="50px" />
-    </td>
-    <td>
-    <center><h3>Js</h3></center>
-    </td>
-  </tr>
 
   <tr>
     <td>
-    <a href="https://git-scm.com/"><img align="center" alt="git" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg?raw=true" width="50px" height="50px" />
+      <a href="https://git-scm.com/"><img align="center" alt="git" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg?raw=true" width="50px" height="50px" />
     </td>
     <td>
     <center><h3>Git</h3></center>
