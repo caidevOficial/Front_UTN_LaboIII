@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script type="text/javascript" src="./js/Sumar.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <button id="myButton">Click</button>
+    
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <label for="txtUsername">Username</label>
+                </td>
+                <td>
+                    <input required type="text" name="Username" id="txtUsername" name="input01" placeholder="Username" pattern="[a-zA-Z.]+">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="txtPassword">Password</label>
+                </td>
+                <td>
+                    <input required type="password" name="Password" id="txtPassword" name="input01" placeholder="Password">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="btnSubmit">Press Button</label>
+                </td>
+                <td>
+                    <input type="submit" id="btnSubmit" value="Submit">
+                </td>
+            </tr>
+        </table>
+
+        <fieldset>
+            <legend>Deporte RadioButton</legend>
+            <input name="Deporte" type="radio" value="Futbol" checked>Futbol <br>
+            <input name="Deporte" type="radio" value="Basket">Basquet <br>
+            <input name="Deporte" type="radio" value="Voley">Voley <br>
+        </fieldset>
+        <fieldset>
+            <legend>Deporte CheckBox</legend>
+            <input name="Futbol" type="checkbox" value="Futbol" checked>Futbol <br>
+            <input name="Basket" type="checkbox" value="Basket">Basquet <br>
+            <input name="Voley" type="checkbox" value="Voley">Voley <br>
+        </fieldset>
+    </form>
+</body>
+</html>
