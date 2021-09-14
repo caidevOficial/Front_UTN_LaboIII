@@ -7,14 +7,22 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <script type="text/javascript" src="./js/Sumar.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css" />
     <title>Document</title>
 </head>
 <body>
-    <button id="myButton">Click</button>
+    
     
     <form>
-        <table>
-            <tr>
+        <table align="center">
+            <th colspan="2">Simple Button</th>
+            <tr align="center">
+                <td colspan="2">
+                    <button id="myButton">Click</button>
+                </td>
+            </tr>
+            <th>Etiqueta</th><th>Text Box</th>
+            <tr align="center">
                 <td>
                     <label for="txtUsername">Username</label>
                 </td>
@@ -22,7 +30,8 @@
                     <input required type="text" name="Username" id="txtUsername" name="input01" placeholder="Username" pattern="[a-zA-Z.]+">
                 </td>
             </tr>
-            <tr>
+            <th>Etiqueta</th><th>Text Box</th>
+            <tr align="center">
                 <td>
                     <label for="txtPassword">Password</label>
                 </td>
@@ -30,7 +39,8 @@
                     <input required type="password" name="Password" id="txtPassword" name="input01" placeholder="Password">
                 </td>
             </tr>
-            <tr>
+            <th>Etiqueta</th><th>Boton</th>
+            <tr align="center">
                 <td>
                     <label for="btnSubmit">Press Button</label>
                 </td>
@@ -38,20 +48,71 @@
                     <input type="submit" id="btnSubmit" value="Submit">
                 </td>
             </tr>
+            <th colspan="2">Radio Button</th>
+            <tr align="center">
+                <td colspan="2">
+                    <fieldset>
+                        <legend>Deporte RadioButton</legend>
+                        <input name="DeporteRadio" type="radio" value="Futbol" checked>Futbol <br>
+                        <input name="DeporteRadio" type="radio" value="Basket">Basquet <br>
+                        <input name="DeporteRadio" type="radio" value="Voley">Voley <br>
+                    </fieldset>
+                </td>
+            </tr>
+            <th colspan="2">Check Box</th>
+            <tr align="center">
+                <td colspan="2">
+                    <fieldset>
+                        <legend>Deporte CheckBox</legend>
+                        <input name="FutbolCheck" type="checkbox" value="Futbol" checked>Futbol <br>
+                        <input name="BasketCheck" type="checkbox" value="Basket">Basquet <br>
+                        <input name="VoleyCheck" type="checkbox" value="Voley">Voley <br>
+                    </fieldset>
+                </td>
+            </tr>
+            <th colspan="2">Cbo</th>
+            <tr align="center">
+                <td colspan="2">
+                    <label for="cboFrutas">
+                        <select name="fruta" id="cboFrutas" multiple>
+                            <option value="Banana">Banana</option>
+                            <option value="Manzana">Manzana</option>
+                            <option value="Pera">Pera</option>
+                            <option value="Naranja">Naranja</option>
+                        </select>
+                    </label>
+                </td>
+            </tr>
+            <th colspan="2">Text Area</th>
+            <tr align="center">
+                <td colspan="2">
+                    <label for="txtArea">
+                        <textarea name="AreaTexto" id="txtArea" cols="30" rows="10"></textarea>
+                    </label>
+                </td>
+            </tr>
+            <th colspan="2">Reproductor Multimedia</th>
+            <tr align="center">
+                <td colspan="2">
+                    <video src="./media/PenP.mp3" controls muted autoplay preload="auto">
+
+                    </video>
+                </td>
+            </tr>
+            <th colspan="2">i Frame</th>
+            <tr align="center">
+                <td colspan="2">
+                    <iframe src="./extra.html" frameborder="0"></iframe>
+                </td>
+            </tr>
         </table>
 
-        <fieldset>
-            <legend>Deporte RadioButton</legend>
-            <input name="Deporte" type="radio" value="Futbol" checked>Futbol <br>
-            <input name="Deporte" type="radio" value="Basket">Basquet <br>
-            <input name="Deporte" type="radio" value="Voley">Voley <br>
-        </fieldset>
-        <fieldset>
-            <legend>Deporte CheckBox</legend>
-            <input name="Futbol" type="checkbox" value="Futbol" checked>Futbol <br>
-            <input name="Basket" type="checkbox" value="Basket">Basquet <br>
-            <input name="Voley" type="checkbox" value="Voley">Voley <br>
-        </fieldset>
+        
+        
+        
+        
+
+        
     </form>
 </body>
 </html>
