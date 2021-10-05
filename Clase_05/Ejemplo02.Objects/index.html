@@ -4,59 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="script" href="Objects.js">
     <title>Objects</title>
 </head>
 <body>
-    <script>
-        const obj1 = {
-            name : "Facu",
-            age : 31,
-            salary : 75800,
-            getInfo : function() {
-                return `${this.name} tiene ${this['age']} años y gana ${this.salary}`;
-            }};
-        console.log(obj1.getInfo());
-        console.log(obj1);
-        
-        //--- Another way to create an object ---//
-        function Person(){
-            this.name = "Facu";
-            this.age = 31;
-            this.salary = 75800;
-
-            this.setName = function(name){
-                this.name = name;
-            }
-
-            this.getName = function(){
-                return this.name;
-            }
-
-            Person.prototype.getInfo = function() {
-                return `${this.name} tiene ${this.age} años y gana ${this.salary}`;
-            }
-        }
-
-        
-        console.log(new Person());
-        
-        //--- Another way to clone an object ---//
-        const obj2 = {...obj1};
-        
-        function Employee(name, age, salary){
-            //--- This is the way to call the ---//
-            //--- constructor of the parent class ---//
-            Person.call(this, name, age, salary);
-            
-        }
-        
-        //--- Sets the prototype of the Person function ---//
-        //--- to the Employee object ---//
-        Object.setPrototypeOf(Employee.prototype, Person.prototype);
-
-        const employee1 = new Employee("Caidev", 31, 75800);
-        console.log(employee1.getInfo());
-
-    </script>
+    
 </body>
 </html>
