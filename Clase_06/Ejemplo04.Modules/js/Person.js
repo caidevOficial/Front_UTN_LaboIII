@@ -20,7 +20,8 @@
  */
 
 //--- A way to declare a class ---//
-class Person {
+//--- with export default you can export a class outside ---//
+export class Person {
     
     /**
      * Constructor of the class

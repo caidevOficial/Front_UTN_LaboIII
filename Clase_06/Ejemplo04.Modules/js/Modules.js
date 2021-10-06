@@ -19,13 +19,17 @@
  * @author Facundo Falcone <CaidevOficial> 
  */
 
+//--- if the objetc imported doesn't have a ''export default'' but ''export''
+//--- then we can use the following bracket to import the object:
+import { Person as P} from './Person.js';
+import { Employee as E} from "./Employee.js";
 
 //--- Instancing an object ---//
 const aPerson = new Person("Facu", 31, 75800);
 console.log(aPerson.greetings());
 
 //--- Using inheritance ---//
-const anEmployee = new AnotherEmployee("Facu", 31, 75800, "Senior");
+const anEmployee = new Employee("Facu", 31, 75800, "Senior");
 console.log(anEmployee.workHard());
 
 

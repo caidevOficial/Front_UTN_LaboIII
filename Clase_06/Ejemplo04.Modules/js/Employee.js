@@ -19,8 +19,11 @@
  * @author Facundo Falcone <CaidevOficial> 
  */
 
+import Person from './Person.js';
+
 //--- Way to use inheritance ---//
-class AnotherEmployee extends Person {
+//--- with export default or a simple export you can export a class outside ---//
+export class Employee extends Person {
 
     /**
      * Constructor of the class Employee
