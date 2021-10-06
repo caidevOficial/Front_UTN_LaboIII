@@ -136,7 +136,7 @@ class Person {
      * @param {int} age 
      * @param {float} salary 
      */
-    constructor(name, age, salary){
+    constructor(name, age, salary = 150000){
         this.name = name;
         this.age = age;
         this.salary = salary;

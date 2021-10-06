@@ -17,36 +17,19 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @author Facundo Falcone <CaidevOficial> 
-*/
-
-/**
- * Function with delegated execution
  */
-function test() {
-  console.log("This is");
-  setTimeout(() => {
-      console.log("function with delegated execution");
-  }, 2000);
-  console.log("a ");
-}
 
-/**
- * Expressed function
- */
-let x = function greet() {
-  console.log("This is an Expresed function.");
-}
+//--- if the objetc imported doesn't have a ''export default'' but ''export''
+//--- then we can use the following bracket to import the object:
+import { Person as P} from './Person.js';
+import { Employee as E} from "./Employee.js";
 
-/**
- * Declared function
- */
-function greetAgain() {
-  console.log("This is a Declared function");
-}
+//--- Instancing an object ---//
+const aPerson = new Person("Facu", 31, 75800);
+console.log(aPerson.greetings());
 
-/**
- * Lambda function
- */
-let z = () => {
-  console.log("This is a Lambda function");
-}
+//--- Using inheritance ---//
+const anEmployee = new Employee("Facu", 31, 75800, "Senior");
+console.log(anEmployee.workHard());
+
+

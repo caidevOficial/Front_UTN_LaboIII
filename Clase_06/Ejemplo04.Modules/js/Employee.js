@@ -17,36 +17,31 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * @author Facundo Falcone <CaidevOficial> 
-*/
-
-/**
- * Function with delegated execution
  */
-function test() {
-  console.log("This is");
-  setTimeout(() => {
-      console.log("function with delegated execution");
-  }, 2000);
-  console.log("a ");
-}
 
-/**
- * Expressed function
- */
-let x = function greet() {
-  console.log("This is an Expresed function.");
-}
+import Person from './Person.js';
 
-/**
- * Declared function
- */
-function greetAgain() {
-  console.log("This is a Declared function");
-}
+//--- Way to use inheritance ---//
+//--- with export default or a simple export you can export a class outside ---//
+export class Employee extends Person {
 
-/**
- * Lambda function
- */
-let z = () => {
-  console.log("This is a Lambda function");
+    /**
+     * Constructor of the class Employee
+     * @param {string} name 
+     * @param {int} age 
+     * @param {float} salary 
+     * @param {string} level 
+     */
+    constructor(name, age, salary, level){
+        super(name, age, salary);
+        this.level = level;
+    }
+
+    greetings(){
+        console.log(`Hola, soy ${this.Name} y tengo ${this.Age} años y gana ${this.Salary}, level ${this.level}`);
+    }
+
+    workHard(){
+        console.log("Estoy trabajando duro");
+    }
 }
