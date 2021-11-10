@@ -132,10 +132,40 @@ const MyPromiseSub = (num1, num2) => {
     });
 };
 
-console.log('Inicio');
-MyPromiseSum(2, 3)
-    .then(result => MyPromiseQuad(result))
-    .then(result => MyPromiseMul(result, 10))
-    .then(result => MyPromiseSub(result, 2))
+/**
+ * Tryes to make a chain of promises and returns the result of many calculus.
+ * @param {int} a First number to make a Calculus
+ * @param {int} b Second number to make a Calculus
+ */
+const CalculatePromise = (a, b) => {
+    MyPromiseSum(a, b)
+    .then(sum => MyPromiseQuad(sum))
+    // Example using a ternary operator
+    .then(quad => 
+        quad > 50 ? 
+        Promise.reject('The result is greater than 50') : 
+        MyPromiseMul(quad, 2))
+    .then(mul => MyPromiseSub(mul, 2))
     .catch(err => console.log(err));
+};
+
+/**
+ * Makes a calculus using Async/Await.
+ * @param {int} a First number to make a Calculus
+ * @param {int} b Second number to make a Calculus
+ */
+const CalculatePromiseAsync = async (a, b) => {
+    try {
+        let sum = await MyPromiseSum(a, b);
+        let quad = await MyPromiseQuad(sum);
+        let mul = await MyPromiseMul(quad, 2);
+        let sub = await MyPromiseSub(mul, 2);
+        console.log(sub);
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+console.log('Inicio');
+Calculate(2, 3);
 console.log('Fin');
