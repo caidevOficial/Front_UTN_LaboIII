@@ -27,29 +27,27 @@
  * @author Facundo Falcone <CaidevOficial> 
  */
 
-import Person from './Person.js';
+const divSpinner = document.querySelector('.spinner');
 
-//--- Way to use inheritance ---//
-//--- with export default or a simple export you can export a class outside ---//
-export class Employee extends Person {
+/**
+ * Creates an object spinner-like.
+ * @returns A spinner.
+ */
+const getSpinner = () => {
+    const spinner = document.createElement('img');
+    spinner.setAttribute('src', './assets/spinner/Search.gif');
+    spinner.setAttribute('alt', 'loader');
 
-    /**
-     * Constructor of the class Employee
-     * @param {string} name 
-     * @param {int} age 
-     * @param {float} salary 
-     * @param {string} level 
-     */
-    constructor(name, age, salary, level){
-        super(name, age, salary);
-        this.level = level;
-    }
+    return spinner;
+}
 
-    greetings(){
-        console.log(`Hola, soy ${this.Name} y tengo ${this.Age} años y gana ${this.Salary}, level ${this.level}`);
-    }
-
-    workHard(){
-        console.log("Estoy trabajando duro");
+/**
+ * Removes all the nodes of the object.
+ */
+const clearSpinner = () => {
+    while(divSpinner.hasChildNodes()){
+        divSpinner.removeChild(divSpinner.firstChild);
     }
 }
+
+export {clearSpinner, getSpinner, divSpinner};

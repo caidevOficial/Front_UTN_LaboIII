@@ -27,29 +27,47 @@
  * @author Facundo Falcone <CaidevOficial> 
  */
 
-import Person from './Person.js';
+import {URL} from "./GetForAPI";
 
-//--- Way to use inheritance ---//
-//--- with export default or a simple export you can export a class outside ---//
-export class Employee extends Person {
 
-    /**
-     * Constructor of the class Employee
-     * @param {string} name 
-     * @param {int} age 
-     * @param {float} salary 
-     * @param {string} level 
-     */
-    constructor(name, age, salary, level){
-        super(name, age, salary);
-        this.level = level;
-    }
+const updatePersona = () => {
+    
+    const newPerson = {
+        "id":25,
+        "Name":"Facu",
+        "Surname":"Falcone"
+    };
 
-    greetings(){
-        console.log(`Hola, soy ${this.Name} y tengo ${this.Age} años y gana ${this.Salary}, level ${this.level}`);
-    }
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener('readystatechange', ()=>{
+        if(xhr.readyState == 4){
+            // desactivar spinner
+            clearSpinner();
 
-    workHard(){
-        console.log("Estoy trabajando duro");
-    }
+            // Asegurar con codigos de estado 200X
+            if(xhr.status >= 200 && xhr.status < 300){
+                const data = JSON.parse(xhr.responseText);
+
+                //mostrar
+                console.log(data);
+                // para verlo por mas tiempo en el server.
+                alert(`${data.id} - ${data.Name} ${data.Surname}`);
+            }else{
+                console.log(`Error: ${xhr.status} : ${xhr.statusText}`);
+            }
+        }else{
+            // lo que retorna el getSpinner se pone como child del div
+            divSpinner.appendChild(getSpinner());
+        }
+    });
+
+    xhr.open('PUT', `${URL}/${newPerson.id}`);
+    // MIME_types
+    xhr.setRequestHeader("Content-Type", "application/json");
+    // debe viajar la peticion en el body.
+    xhr.send(JSON.stringify(newPerson));
+}
+
+export {
+    updatePersona
 }
