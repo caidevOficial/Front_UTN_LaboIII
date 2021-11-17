@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CDN de Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/GetForAPI.js" defer></script>
+    <script src="./js/CreateForAPI.js" defer></script>
+    <script src="./js/DeleteForAPI.js" defer></script>
+    <script src="./js/UpdateForAPI.js" defer></script>
+    <script src="./js/Spinner.js"></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Consumo de API</title>
+</head>
+<body>
+    <br><button onclick="getPersonasAjax();">Traer Personas Ajax</button>
+    <br><button onclick="getPersonasAjax(3);">Traer Personas Ajax ID: 3</button>
+    <br><button onclick="getPersonasFetch();">Traer Personas Promises</button>
+    <br><button onclick="getPersonasFetchAsync();">Traer Personas Async</button>
+    <br><button onclick="getPersonasAxios();">Traer Personas Axios</button>
+    <br><button onclick="getPersonasAxiosAsync();">Traer Personas Axios</button>
+    
+    <br><br><button onclick="createPersona();">Crear Persona Ajax</button>
+    <br><button onclick="createPersonaFetch();">Crear Persona Promise</button>
+    <br><button onclick="createPersonaFetchAsync();">Crear Persona Async</button>
+
+    <br><br><button onclick="deletePersona(1);">Borrar Persona Ajax</button>
+    <br><button onclick="deletePersonaFetch(2);">Borrar Persona Promise</button>
+    <br><button onclick="deletePersonaFetchAsync(3);">Borrar Persona Async</button>
+
+    <br><br><button onclick="updatePersona();">Modificar Persona Ajax</button>
+    
+    <div class="spinner"></div>
+</body>
+</html>
