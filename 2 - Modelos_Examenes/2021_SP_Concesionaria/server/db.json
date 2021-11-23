@@ -91,16 +91,6 @@
       "horsePower": "790"
     },
     {
-      "id": 15,
-      "title": "Aston Martin",
-      "transaction": "rent",
-      "description": "Valhalla",
-      "price": "2500000",
-      "doors": "2",
-      "kilometers": "190",
-      "horsePower": "750"
-    },
-    {
       "id": 16,
       "title": "Volskwagen",
       "transaction": "rent",
@@ -109,6 +99,36 @@
       "doors": "4",
       "kilometers": "3500",
       "horsePower": "110"
+    },
+    {
+      "id": 17,
+      "title": "Lamborghini",
+      "transaction": "rent",
+      "description": "Diablo",
+      "price": "500000",
+      "doors": "2",
+      "kilometers": "15894",
+      "horsePower": "220"
+    },
+    {
+      "id": 18,
+      "title": "Ford",
+      "transaction": "rent",
+      "description": "Mustang GT",
+      "price": "500000",
+      "doors": "2",
+      "kilometers": "5100",
+      "horsePower": "192"
+    },
+    {
+      "id": 19,
+      "title": "Chevrolet",
+      "transaction": "rent",
+      "description": "Camaro",
+      "price": "600000",
+      "doors": "2",
+      "kilometers": "4000",
+      "horsePower": "199"
     }
   ]
 }
