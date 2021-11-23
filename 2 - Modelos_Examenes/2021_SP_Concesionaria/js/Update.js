@@ -27,48 +27,39 @@
  * @author Facundo Falcone <CaidevOficial> 
  */
 
-import {URL} from "./GetForAPI";
+ import {URL} from "./BackendData.js";
+ import { ToggleSpinner } from "./Spinner.js";
 
-
-const updatePersona = () => {
-    
-    const newPerson = {
-        "id":25,
-        "Name":"Facu",
-        "Surname":"Falcone"
+ /**
+  * Updates the information of the car.
+  * @param {int} id The id of the car to update.
+  * @param {Auto} object The car to update.
+  */
+ const updateObjectFetch = (id,object)=>{
+    const options  =  {
+        method:"PUT",
+        headers:{
+            "Content-Type":"application/json; charset=utf-8"
+        },
+        body:JSON.stringify(object)
     };
-
-    divSpinner.appendChild(getSpinner());
-    const xhr = new XMLHttpRequest();
-    xhr.addEventListener('readystatechange', ()=>{
-        if(xhr.readyState == 4){
-            // desactivar spinner
-            clearSpinner();
-
-            // Asegurar con codigos de estado 200X
-            if(xhr.status >= 200 && xhr.status < 300){
-                const data = JSON.parse(xhr.responseText);
-
-                //mostrar
-                console.log(data);
-                // para verlo por mas tiempo en el server.
-                alert(`${data.id} - ${data.Name} ${data.Surname}`);
-            }else{
-                console.log(`Error: ${xhr.status} : ${xhr.statusText}`);
-            }
-        }else{
-            // lo que retorna el getSpinner se pone como child del div
-            divSpinner.appendChild(getSpinner());
-        }
+    //ToggleSpinner(true);
+    fetch(`${URL}/${id}`, options)
+    .then((res)=>{
+        // valido que la respuesta sea correcta.
+        // retorna una promesa, el retorno del retorno de res.
+        // si falla, envio una promesa rechazada.
+        return res.ok ? res.json() : Promise.reject(res);
+    })
+    .then((data)=>{
+        console.log(data);
+    })
+    .catch((error)=>{
+        console.error(`Error: ${error.status} : ${error.status}`);
+    })
+    .finally(()=>{
+        ToggleSpinner(false);
     });
+};
 
-    xhr.open('PUT', `${URL}/${newPerson.id}`);
-    // MIME_types
-    xhr.setRequestHeader("Content-Type", "application/json");
-    // debe viajar la peticion en el body.
-    xhr.send(JSON.stringify(newPerson));
-}
-
-export {
-    updatePersona
-}
+export { updateObjectFetch };

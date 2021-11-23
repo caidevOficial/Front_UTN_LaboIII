@@ -1,0 +1,114 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "title": "Porsche",
+      "transaction": "exchange",
+      "description": "911 S",
+      "price": "2100000",
+      "doors": "3",
+      "kilometers": "0",
+      "horsePower": "200"
+    },
+    {
+      "id": 3,
+      "title": "Ferrari",
+      "transaction": "sale",
+      "description": "Montecarlo",
+      "price": "2000000",
+      "doors": "3",
+      "kilometers": "0",
+      "horsePower": "190"
+    },
+    {
+      "id": 4,
+      "title": "Ferrari",
+      "transaction": "sale",
+      "description": "Testarossa",
+      "price": "1500000",
+      "doors": "2",
+      "kilometers": "0",
+      "horsePower": "200"
+    },
+    {
+      "id": 9,
+      "title": "Fiat",
+      "transaction": "sale",
+      "description": "600",
+      "price": "1500000",
+      "doors": "4",
+      "kilometers": "69000",
+      "horsePower": "90"
+    },
+    {
+      "id": 10,
+      "title": "Lamborghini",
+      "transaction": "exchange",
+      "description": "Diablo-S",
+      "price": "2499999",
+      "doors": "2",
+      "kilometers": "0",
+      "horsePower": "250"
+    },
+    {
+      "id": 11,
+      "title": "Aston Martin",
+      "transaction": "sale",
+      "description": "Valhalla",
+      "price": "350000",
+      "doors": "3",
+      "kilometers": "0",
+      "horsePower": "900"
+    },
+    {
+      "id": 12,
+      "title": "Aston Martin",
+      "transaction": "sale",
+      "description": "Valkyria",
+      "price": "500000",
+      "doors": "2",
+      "kilometers": "0",
+      "horsePower": "750"
+    },
+    {
+      "id": 13,
+      "title": "Aston Martin",
+      "transaction": "rent",
+      "description": "Valhalla",
+      "price": "1500000",
+      "doors": "2",
+      "kilometers": "5000",
+      "horsePower": "750"
+    },
+    {
+      "id": 14,
+      "title": "Aston Martin",
+      "transaction": "rent",
+      "description": "Valkyria",
+      "price": "1500000",
+      "doors": "2",
+      "kilometers": "15000",
+      "horsePower": "790"
+    },
+    {
+      "id": 15,
+      "title": "Aston Martin",
+      "transaction": "rent",
+      "description": "Valhalla",
+      "price": "2500000",
+      "doors": "2",
+      "kilometers": "190",
+      "horsePower": "750"
+    },
+    {
+      "id": 16,
+      "title": "Volskwagen",
+      "transaction": "rent",
+      "description": "Vento",
+      "price": "1550000",
+      "doors": "4",
+      "kilometers": "3500",
+      "horsePower": "110"
+    }
+  ]
+}

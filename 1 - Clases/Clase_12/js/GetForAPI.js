@@ -29,6 +29,8 @@
 
 const URL = 'http://localhost:3000/personas';
 
+import { getSpinner, clearSpinner } from "./Spinner";
+
 const getPersonasAjax = () =>{
     const xhr = new XMLHttpRequest();
     xhr.addEventListener('readystatechange', ()=>{

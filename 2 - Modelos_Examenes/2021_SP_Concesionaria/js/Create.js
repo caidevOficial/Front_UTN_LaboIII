@@ -27,48 +27,41 @@
  * @author Facundo Falcone <CaidevOficial> 
  */
 
-import {URL} from "./GetForAPI";
+ import { ToggleSpinner } from "./Spinner.js";
+ import {URL} from "./BackendData.js";
+ 
+ /**
+  * Creates an object Auto-type and insert it into the database.
+  * @param {Auto} myObject The car to be created.
+  */
+ const createObjectFetch = (myObject) => {
 
-
-const updatePersona = () => {
-    
-    const newPerson = {
-        "id":25,
-        "Name":"Facu",
-        "Surname":"Falcone"
+    const option = {
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(myObject)
     };
 
-    divSpinner.appendChild(getSpinner());
-    const xhr = new XMLHttpRequest();
-    xhr.addEventListener('readystatechange', ()=>{
-        if(xhr.readyState == 4){
-            // desactivar spinner
-            clearSpinner();
-
-            // Asegurar con codigos de estado 200X
-            if(xhr.status >= 200 && xhr.status < 300){
-                const data = JSON.parse(xhr.responseText);
-
-                //mostrar
-                console.log(data);
-                // para verlo por mas tiempo en el server.
-                alert(`${data.id} - ${data.Name} ${data.Surname}`);
-            }else{
-                console.log(`Error: ${xhr.status} : ${xhr.statusText}`);
-            }
-        }else{
-            // lo que retorna el getSpinner se pone como child del div
-            divSpinner.appendChild(getSpinner());
-        }
-    });
-
-    xhr.open('PUT', `${URL}/${newPerson.id}`);
-    // MIME_types
-    xhr.setRequestHeader("Content-Type", "application/json");
-    // debe viajar la peticion en el body.
-    xhr.send(JSON.stringify(newPerson));
+    //ToggleSpinner(true);
+    // envio la peticion.
+    fetch(URL, option)
+    // respuesta de la peticion.
+    .then((res)=>{
+        console.log(res);
+        // valido que la respuesta sea correcta.
+        // retorna una promesa, el retorno del retorno de res.
+        // si falla, envio una promesa rechazada.
+        return res.ok ? res.json() : Promise.reject(res);
+    })
+    // al fallar, lo catcheo y muestro.
+    .catch((err)=>{
+        console.error(`Error: ${err}`);
+    })
+    .finally(()=>{
+        ToggleSpinner(false);
+    })
 }
 
-export {
-    updatePersona
-}
+export {createObjectFetch};
