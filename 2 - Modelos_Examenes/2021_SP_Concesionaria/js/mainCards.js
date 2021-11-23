@@ -27,7 +27,7 @@
  * @author Facundo Falcone <CaidevOficial> 
  */
 
-import { getObjectsFetchForCards } from "./Read.js";
+import { getObjectsFetchForCards } from "./jsFetch/Read.js";
 
 export const createMainCards = () => {
     const article = document.querySelector("#articles");

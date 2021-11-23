@@ -27,39 +27,40 @@
  * @author Facundo Falcone <CaidevOficial> 
  */
 
-export const divSpinner = document.getElementById("spinner");
+ import {URL} from "../BackendData.js";
+ import { ToggleSpinner } from "../Spinner.js";
 
-/**
- * Creates an object spinner-like.
- * @returns A spinner.
- */
-const getSpinner = () => {
-    console.log('Inside spinner function');
-    console.log(divSpinner);
-    let spinner = document.createElement('img');
-    spinner.setAttribute('src', './assets/Search.gif');
-    spinner.setAttribute('alt', 'Spinner');
-    divSpinner.appendChild( spinner);
-}
+ /**
+  * Updates the information of the car.
+  * @param {int} id The id of the car to update.
+  * @param {Auto} object The car to update.
+  */
+ const updateObjectFetch = (id,object)=>{
+    const options  =  {
+        method:"PUT",
+        headers:{
+            "Content-Type":"application/json; charset=utf-8"
+        },
+        body:JSON.stringify(object)
+    };
+    //ToggleSpinner(true);
+    fetch(`${URL}/${id}`, options)
+    .then((res)=>{
+        // valido que la respuesta sea correcta.
+        // retorna una promesa, el retorno del retorno de res.
+        // si falla, envio una promesa rechazada.
+        return res.ok ? res.json() : Promise.reject(res);
+    })
+    .then((data)=>{
+        console.log(data);
+        alert(`Object [${data.id}] [${data.title} ${data.description}] updated sucessfully`);
+    })
+    .catch((error)=>{
+        console.error(`Error: ${error.status} : ${error.status}`);
+    })
+    .finally(()=>{
+        ToggleSpinner(false);
+    });
+};
 
-/**
- * Removes all the nodes of the object.
- */
-const clearSpinner = () => {
-    console.log('Clearing spinner.');
-    while(divSpinner.hasChildNodes()){
-        divSpinner.removeChild(divSpinner.firstChild);
-    }
-}
-
-/**
- * Toogles the spinner bassed on the boolean.
- * @param {bool} bool The boolean to use to toogle the spinner.
- */
-export const ToggleSpinner = (bool) => {
-    if (bool){
-        getSpinner();
-    }else{
-        clearSpinner();
-    }
-}
+export { updateObjectFetch };

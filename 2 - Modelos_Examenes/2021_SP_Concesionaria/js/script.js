@@ -29,10 +29,10 @@
 
 import { updateTable} from "./dynamicTable.js";
 import { myForm, updateForm, hideUnhideButtons } from "./myForm.js";
-import { deleteObjectFetch } from "./Delete.js";
-import { createObjectFetch } from "./Create.js";
-import { getObjectsFetch, getObjectsFetchCB } from "./Read.js";
-import { updateObjectFetch } from "./Update.js";
+import { deleteObjectFetch } from "./jsFetch/Delete.js";
+import { createObjectFetch } from "./jsFetch/Create.js";
+import { getObjectsFetch, getObjectsFetchCB } from "./jsFetch/Read.js";
+import { updateObjectFetch } from "./jsFetch/Update.js";
 import { checkBoxHandler, filterAddsHandler } from "./Filter.js";
 
 const $myNewForm = document.forms[0];

@@ -27,39 +27,36 @@
  * @author Facundo Falcone <CaidevOficial> 
  */
 
-export const divSpinner = document.getElementById("spinner");
+import { URL } from "../BackendData.js";
+import { ToggleSpinner } from "../Spinner.js";
 
-/**
- * Creates an object spinner-like.
- * @returns A spinner.
- */
-const getSpinner = () => {
-    console.log('Inside spinner function');
-    console.log(divSpinner);
-    let spinner = document.createElement('img');
-    spinner.setAttribute('src', './assets/Search.gif');
-    spinner.setAttribute('alt', 'Spinner');
-    divSpinner.appendChild( spinner);
+const deleteObjectFetch = (id) => {
+
+    const option = {
+        method:"DELETE"
+    };
+
+    ToggleSpinner(true);
+    // envio la peticion.
+    fetch(`${URL}/${id}`, option)
+    // respuesta de la peticion.
+    .then((res)=>{
+        console.log(res);
+        // valido que la respuesta sea correcta.
+        // retorna una promesa, el retorno del retorno de res.
+        // si falla, envio una promesa rechazada.
+        return res.ok ? res.json() : Promise.reject(res);
+    })
+    .then((data)=>{
+        alert(`Object deleted sucessfully`);
+    })
+    // al fallar, lo catcheo y muestro.
+    .catch((err)=>{
+        console.error(err);
+    })
+    .finally(()=>{
+        ToggleSpinner(false);
+    })
 }
 
-/**
- * Removes all the nodes of the object.
- */
-const clearSpinner = () => {
-    console.log('Clearing spinner.');
-    while(divSpinner.hasChildNodes()){
-        divSpinner.removeChild(divSpinner.firstChild);
-    }
-}
-
-/**
- * Toogles the spinner bassed on the boolean.
- * @param {bool} bool The boolean to use to toogle the spinner.
- */
-export const ToggleSpinner = (bool) => {
-    if (bool){
-        getSpinner();
-    }else{
-        clearSpinner();
-    }
-}
+export {deleteObjectFetch};

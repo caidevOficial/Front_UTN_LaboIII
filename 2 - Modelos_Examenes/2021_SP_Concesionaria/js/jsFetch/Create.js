@@ -27,39 +27,44 @@
  * @author Facundo Falcone <CaidevOficial> 
  */
 
-export const divSpinner = document.getElementById("spinner");
+ import { ToggleSpinner } from "../Spinner.js";
+ import {URL} from "../BackendData.js";
+ 
+ /**
+  * Creates an object Auto-type and insert it into the database.
+  * @param {Auto} myObject The car to be created.
+  */
+ const createObjectFetch = (myObject) => {
 
-/**
- * Creates an object spinner-like.
- * @returns A spinner.
- */
-const getSpinner = () => {
-    console.log('Inside spinner function');
-    console.log(divSpinner);
-    let spinner = document.createElement('img');
-    spinner.setAttribute('src', './assets/Search.gif');
-    spinner.setAttribute('alt', 'Spinner');
-    divSpinner.appendChild( spinner);
+    const option = {
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(myObject)
+    };
+
+    ToggleSpinner(true);
+    // envio la peticion.
+    fetch(URL, option)
+    // respuesta de la peticion.
+    .then((res)=>{
+        console.log(res);
+        // valido que la respuesta sea correcta.
+        // retorna una promesa, el retorno del retorno de res.
+        // si falla, envio una promesa rechazada.
+        return res.ok ? res.json() : Promise.reject(res);
+    })
+    .then((data)=>{
+        alert(`Object [${data.id}] [${data.title} ${data.description}] created sucessfully`);
+    })
+    // al fallar, lo catcheo y muestro.
+    .catch((err)=>{
+        console.error(`Error: ${err}`);
+    })
+    .finally(()=>{
+        ToggleSpinner(false);
+    })
 }
 
-/**
- * Removes all the nodes of the object.
- */
-const clearSpinner = () => {
-    console.log('Clearing spinner.');
-    while(divSpinner.hasChildNodes()){
-        divSpinner.removeChild(divSpinner.firstChild);
-    }
-}
-
-/**
- * Toogles the spinner bassed on the boolean.
- * @param {bool} bool The boolean to use to toogle the spinner.
- */
-export const ToggleSpinner = (bool) => {
-    if (bool){
-        getSpinner();
-    }else{
-        clearSpinner();
-    }
-}
+export {createObjectFetch};
