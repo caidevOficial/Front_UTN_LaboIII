@@ -27,48 +27,36 @@
  * @author Facundo Falcone <CaidevOficial> 
  */
 
-import {URL} from "./GetForAPI";
+import { URL } from "../BackendData.js";
+import { ToggleSpinner } from "../Spinner.js";
 
+const deleteObjectFetch = (id) => {
 
-const updatePersona = () => {
-    
-    const newPerson = {
-        "id":25,
-        "Name":"Facu",
-        "Surname":"Falcone"
+    const option = {
+        method:"DELETE"
     };
 
-    divSpinner.appendChild(getSpinner());
-    const xhr = new XMLHttpRequest();
-    xhr.addEventListener('readystatechange', ()=>{
-        if(xhr.readyState == 4){
-            // desactivar spinner
-            clearSpinner();
-
-            // Asegurar con codigos de estado 200X
-            if(xhr.status >= 200 && xhr.status < 300){
-                const data = JSON.parse(xhr.responseText);
-
-                //mostrar
-                console.log(data);
-                // para verlo por mas tiempo en el server.
-                alert(`${data.id} - ${data.Name} ${data.Surname}`);
-            }else{
-                console.log(`Error: ${xhr.status} : ${xhr.statusText}`);
-            }
-        }else{
-            // lo que retorna el getSpinner se pone como child del div
-            divSpinner.appendChild(getSpinner());
-        }
-    });
-
-    xhr.open('PUT', `${URL}/${newPerson.id}`);
-    // MIME_types
-    xhr.setRequestHeader("Content-Type", "application/json");
-    // debe viajar la peticion en el body.
-    xhr.send(JSON.stringify(newPerson));
+    ToggleSpinner(true);
+    // envio la peticion.
+    fetch(`${URL}/${id}`, option)
+    // respuesta de la peticion.
+    .then((res)=>{
+        console.log(res);
+        // valido que la respuesta sea correcta.
+        // retorna una promesa, el retorno del retorno de res.
+        // si falla, envio una promesa rechazada.
+        return res.ok ? res.json() : Promise.reject(res);
+    })
+    .then((data)=>{
+        alert(`Object deleted sucessfully`);
+    })
+    // al fallar, lo catcheo y muestro.
+    .catch((err)=>{
+        console.error(err);
+    })
+    .finally(()=>{
+        ToggleSpinner(false);
+    })
 }
 
-export {
-    updatePersona
-}
+export {deleteObjectFetch};

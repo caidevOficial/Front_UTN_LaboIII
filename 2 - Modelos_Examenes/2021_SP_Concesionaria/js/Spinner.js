@@ -27,48 +27,39 @@
  * @author Facundo Falcone <CaidevOficial> 
  */
 
-import {URL} from "./GetForAPI";
+export const divSpinner = document.getElementById("spinner");
 
-
-const updatePersona = () => {
-    
-    const newPerson = {
-        "id":25,
-        "Name":"Facu",
-        "Surname":"Falcone"
-    };
-
-    divSpinner.appendChild(getSpinner());
-    const xhr = new XMLHttpRequest();
-    xhr.addEventListener('readystatechange', ()=>{
-        if(xhr.readyState == 4){
-            // desactivar spinner
-            clearSpinner();
-
-            // Asegurar con codigos de estado 200X
-            if(xhr.status >= 200 && xhr.status < 300){
-                const data = JSON.parse(xhr.responseText);
-
-                //mostrar
-                console.log(data);
-                // para verlo por mas tiempo en el server.
-                alert(`${data.id} - ${data.Name} ${data.Surname}`);
-            }else{
-                console.log(`Error: ${xhr.status} : ${xhr.statusText}`);
-            }
-        }else{
-            // lo que retorna el getSpinner se pone como child del div
-            divSpinner.appendChild(getSpinner());
-        }
-    });
-
-    xhr.open('PUT', `${URL}/${newPerson.id}`);
-    // MIME_types
-    xhr.setRequestHeader("Content-Type", "application/json");
-    // debe viajar la peticion en el body.
-    xhr.send(JSON.stringify(newPerson));
+/**
+ * Creates an object spinner-like.
+ * @returns A spinner.
+ */
+const getSpinner = () => {
+    console.log('Inside spinner function');
+    console.log(divSpinner);
+    let spinner = document.createElement('img');
+    spinner.setAttribute('src', './assets/Search.gif');
+    spinner.setAttribute('alt', 'Spinner');
+    divSpinner.appendChild( spinner);
 }
 
-export {
-    updatePersona
+/**
+ * Removes all the nodes of the object.
+ */
+const clearSpinner = () => {
+    console.log('Clearing spinner.');
+    while(divSpinner.hasChildNodes()){
+        divSpinner.removeChild(divSpinner.firstChild);
+    }
+}
+
+/**
+ * Toogles the spinner bassed on the boolean.
+ * @param {bool} bool The boolean to use to toogle the spinner.
+ */
+export const ToggleSpinner = (bool) => {
+    if (bool){
+        getSpinner();
+    }else{
+        clearSpinner();
+    }
 }
