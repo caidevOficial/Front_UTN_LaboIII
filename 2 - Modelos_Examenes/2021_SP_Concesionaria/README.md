@@ -69,8 +69,6 @@
 
 ---
 
-## 
-
 <table align="center">
  <th colspan="2"><h2>Technologies used. 📌</h2></th>
   <tr>
@@ -114,6 +112,17 @@
     </td>
     <td>
       <center><h3>Js</h3></center>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://nodejs.org/es/">
+        <img align="center" alt="js" src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg?raw=true" width="50px" height="50px" />
+      </a>
+    </td>
+    <td>
+      <center><h3>NodeJs</h3></center>
     </td>
   </tr>
 
