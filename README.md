@@ -69,9 +69,8 @@
 
 ---
 
-## Technologies used. 📌
-
-<table class="skills">
+<table align="center">
+ <th colspan="2"><h2>Technologies used. 📌</h2></th>
   <tr>
     <td>
       <a href="https://www.w3.org/html/">
@@ -96,6 +95,17 @@
   
   <tr>
     <td>
+      <a href="https://getbootstrap.com" target="_blank">
+          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/>
+      </a> 
+    </td>
+    <td>
+      <center><h3>Bootstrap</h3></center>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/">
         <img align="center" alt="js" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg?raw=true" width="50px" height="50px" />
       </a>
@@ -107,12 +117,34 @@
 
   <tr>
     <td>
+      <a href="https://nodejs.org/es/">
+        <img align="center" alt="js" src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original-wordmark.svg?raw=true" width="50px" height="50px" />
+      </a>
+    </td>
+    <td>
+      <center><h3>NodeJs</h3></center>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
       <a href="https://git-scm.com/">
         <img align="center" alt="git" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg?raw=true" width="50px" height="50px" />
       </a>
     </td>
     <td>
       <center><h3>Git</h3></center>
+    </td>
+  </tr>
+
+  <tr>
+    <td>
+      <a href="https://code.visualstudio.com/" target="_blank">
+          <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png?raw=true" alt="visualStudio" width="40" height="40"/>
+      </a>
+    </td>
+    <td>
+      <center><h3>Visual Studio Code</h3></center>
     </td>
   </tr>
 </table>
