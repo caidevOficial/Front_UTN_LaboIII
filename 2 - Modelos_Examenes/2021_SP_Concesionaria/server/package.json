@@ -1,0 +1,15 @@
+{
+  "name": "sp_lab3",
+  "version": "3.0.0",
+  "description": "Second Test for LabIII",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "json-server -w -p 2502 -d 2500 db.json"
+  },
+  "author": "Facu Falcone",
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  }
+}
